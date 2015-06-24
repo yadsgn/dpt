@@ -1,0 +1,112 @@
+@import (reference) 'const-controls-0.0.1a.less';
+
+.radiogroup {
+    display:inline-block;
+    vertical-align:baseline;
+    white-space:nowrap;
+}
+
+.radiogroup_max-width_yes,
+.radiogroup_max-width {
+    width:100%;
+}
+
+/*
+ * _type_normal
+ */
+.radiogroup > .button_type_normal {
+    border-radius:0;
+}
+.radiogroup > .button_type_normal .button__ground {
+    border-radius:0;
+    right:0;
+}
+.desktop.onkey .radiogroup > .button_type_normal:focus .button__ground {
+    right:1px;
+}
+.radiogroup > .button_state_check + .button_type_normal .button__ground {
+    left:0 !important;
+}
+.desktop.onkey .radiogroup > .button_state_check + .button_type_normal:focus .button__ground {
+    left:1px;
+}
+.radiogroup > .button_type_normal.button_state_check .button__ground {
+    left:1px;
+    right:1px;
+}
+
+.radiogroup > .button_type_normal:first-child {
+    border-radius:@button-radius 0 0 @button-radius;
+}
+.radiogroup > .button_type_normal:first-child .button__ground {
+    border-radius:@button-radius - 1 0 0 @button-radius - 1;
+}
+.radiogroup > .button_type_normal:first-child:focus .button__ground {
+    border-radius:@button-radius - 2 0 0 @button-radius - 2;
+}
+
+.radiogroup > .button_type_normal:last-child:not(.button_pin_right) {
+    border-radius:0 @button-radius @button-radius 0;
+}
+.radiogroup > .button_type_normal:last-child:not(.button_pin_right) .button__ground {
+    border-radius:0 @button-radius - 1 @button-radius - 1 0;
+    right:1px;
+}
+.radiogroup > .button_type_normal:last-child:not(.button_pin_right):focus .button__ground {
+    border-radius:0 @button-radius - 2 @button-radius - 2 0;
+    right:1px;
+}
+
+.desktop.onkey .radiogroup > .button_type_normal:not(:last-child):focus + .button:not(.button_state_check) .button__ground {
+    left:0;
+}
+
+
+/*
+ * _type_pseudo
+ */
+.radiogroup > .button_type_pseudo,
+.radiogroup > .button_type_pseudo .button__ground {
+    border-radius:0;
+}
+.radiogroup > .button_type_pseudo .button__border {
+    border-radius:0;
+    right:-1px;
+}
+
+.radiogroup > .button_type_pseudo.button_state_check .button__border {
+    left:0;
+    right:0;
+}
+
+.radiogroup > .button_state_check + .button_type_pseudo .button__border {
+    left:-1px;
+}
+
+.radiogroup > .button_type_pseudo:first-child,
+.radiogroup > .button_type_pseudo:first-child .button__border {
+    border-radius:@button-radius 0 0 @button-radius;
+}
+.radiogroup > .button_type_pseudo.button_state_check:first-child .button__border {
+    border-radius:@button-radius 0 0 @button-radius;
+}
+.radiogroup > .button_type_pseudo:first-child .button__ground {
+    border-radius:@button-radius - 1 0 0 @button-radius - 1;
+}
+
+
+.radiogroup > .button_type_pseudo:last-child,
+.radiogroup > .button_type_pseudo:last-child .button__border {
+    border-radius:0 @button-radius @button-radius 0;
+    right:0;
+}
+
+.radiogroup > .button_type_pseudo.button_state_check:last-child .button__border {
+    border-radius:0 @button-radius @button-radius 0;
+}
+.radiogroup > .button_type_pseudo.button_state_check:last-child .button__ground {
+    border-radius:0 @button-radius - 1 @button-radius - 1 0;
+}
+.radiogroup > .button_type_pseudo.button_state_check:last-child .button__border {
+    right:0;
+}

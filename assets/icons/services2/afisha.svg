@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <style>
+
+      .cls-3 {
+        fill: #ee0000;
+      }
+
+      .cls-4 {
+        fill: #ffcc02;
+      }
+
+      .cls-5 {
+        fill: #222222;
+      }
+    </style>
+  </defs>
+  <g id="afishasvg">
+    <rect id="rect-1" class="cls-3" x="10" width="30" height="40"/>
+    <rect id="rect-2" class="cls-4" y="5" width="23" height="23"/>
+    <rect id="rect-3" class="cls-5" x="15" y="20" width="15" height="15"/>
+  </g>
+</svg>

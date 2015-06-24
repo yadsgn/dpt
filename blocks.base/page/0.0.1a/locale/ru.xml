@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<locale lang="ru">
+    <services>
+        <item id="serp">Поиск</item>
+        <item id="images">Картинки</item>
+        <item id="maps">Карты</item>
+        <item id="traffic" noicon="yes">Пробки</item>
+        <item id="market">Маркет</item>
+        <item id="news">Новости</item>
+        <item id="dict">Словари</item>
+        <item id="video">Видео</item>
+        <item id="weather" noicon="yes">Погода</item>
+        <item id="auto">Авто</item>
+        <item id="music">Музыка</item>
+        <item id="afisha">Афиша</item>
+        <item id="translate" noicon="yes">Перевод</item>
+        <item id="avia">Авиабилеты</item>
+        <item id="timetable">Расписания</item>
+        <item id="taxi" noicon="yes">Такси</item>
+        <item id="tv" noicon="yes">Телепрограмма</item>
+        <item id="mail" noicon="yes">Почта</item>
+        <item id="disk">Диск</item>
+        <item id="sport" noicon="yes">Спорт</item>
+        <item id="app" noicon="yes">Приложения</item>
+        <item id="rabota" noicon="yes">Работа</item>
+    </services>
+
+    <months>
+        <nominative>
+            <item>январь</item>
+            <item>февраль</item>
+            <item>март</item>
+            <item>апрель</item>
+            <item>май</item>
+            <item>июнь</item>
+            <item>июль</item>
+            <item>август</item>
+            <item>сентябрь</item>
+            <item>октябрь</item>
+            <item>ноябрь</item>
+            <item>декабрь</item>
+        </nominative>
+        <genitive>
+            <item>января</item>
+            <item>февраля</item>
+            <item>марта</item>
+            <item>апреля</item>
+            <item>мая</item>
+            <item>июня</item>
+            <item>июля</item>
+            <item>августа</item>
+            <item>сентября</item>
+            <item>октября</item>
+            <item>ноября</item>
+            <item>декабря</item>
+        </genitive>
+    </months>
+
+    <!-- <strings>
+        <item id="search">Найти</item>
+        <item id="remove">Удалить</item>
+        <item id="thsnd">тыс.</item>
+        <item id="mln">млн</item>
+        <item id="Video">Видео</item>
+        <item id="For-example">Например</item>
+    </strings> -->
+</locale>

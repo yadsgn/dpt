@@ -1,0 +1,50 @@
+<meta charset="utf8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<meta name="format-detection" content="telephone=no"/>
+<script src="/.jbuilder/si-0.3.0.js"></script>
+<script>
+  SI.render({
+    libs: {
+      autospec: "0.2.0",
+      base:   "0.1.0",
+      constructives:	 "0.1.0",
+      wiki: 	"0.0.1"
+    },
+    blocks: {
+      "common.button": "3.0.0"
+    }
+})
+</script>
+
+<b:page>
+  <l:b m:padding-y="S">
+    <b:button>button</b:button>
+  </l:b>
+
+  <l:b m:padding-y="S">
+    <b:button m:mode="check">check</b:button>
+  </l:b>
+
+  <l:b m:padding-y="S">
+    <l:g m:gap="L">
+      <l:c>
+        <b:button m:mode="radio" m:state="check" m:group="radio-1">radio 1</b:button>
+      </l:c>
+      <l:c>
+        <b:button m:mode="radio" m:group="radio-1">radio 2</b:button>
+      </l:c>
+    </l:g>
+  </l:b>
+
+  <l:b m:padding-y="S">
+    <b:button m:mode="dropdown">dropdown</b:button>
+  </l:b>
+
+  <l:b m:padding-y="S">
+    <b:button m:mode="next">next</b:button>
+  </l:b>
+
+  <l:b m:padding-y="S">
+    <b:button m:mode="back">back</b:button>
+  </l:b>
+</b:page>

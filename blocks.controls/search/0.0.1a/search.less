@@ -1,0 +1,65 @@
+@import (reference) 'const-controls-0.0.1a.less';
+
+.search
+{
+    @height:34px;
+
+    position: relative;
+    display: inline-block;
+    border-radius:@button-radius;
+    width:400px;
+
+    &_state {
+        &_release {
+
+        }
+        &_focus {
+
+        }
+    }
+    &_shadow {
+        .shadow-control;
+        .input {
+            box-shadow:none;
+            background:#FFF;
+            &_focus_yes {
+                .focus-border;
+            }
+            .desktop &:not(.input_focus_yes):hover {
+                box-shadow:none;
+            }
+        }
+    }
+
+    .button {
+        z-index:2;
+        width:70px;
+        position: absolute;
+        top:0;
+        right: 0;
+        &__label {
+            text-align:center;
+            padding: 0;
+        }
+    }
+
+    .input_focus_yes + .button_type_normal .button__ground {
+        left:0;
+    }
+
+    .input {
+        display: block;
+        margin-right:70px;
+        width:auto;
+        z-index:1;
+        &__input {
+            font-size:16px;
+            &::-webkit-input-placeholder {
+                font-size:13px;
+            }
+        }
+    }
+    &_action .input_focus_yes .input__ground {
+        right:0;
+    }
+}

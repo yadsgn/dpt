@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="34" height="50" viewBox="0 0 34 50">
+  <defs>
+    <style>
+
+      .cls-3 {
+        fill: #ffcc00;
+      }
+
+      .cls-4 {
+        fill: #ee0000;
+      }
+    </style>
+  </defs>
+  <g id="musicsvg">
+    <circle id="circle-1" class="cls-3" cx="17" cy="33" r="17"/>
+    <circle id="circle-2" class="cls-4" cx="17" cy="33" r="9"/>
+    <path d="M22.001,0.000 C22.001,0.000 34.000,5.054 34.000,5.054 C34.000,5.054 34.000,13.223 34.000,13.223 C34.000,13.223 25.958,9.802 25.958,9.802 C25.958,9.802 25.958,33.500 25.958,33.500 C25.958,33.500 22.001,33.500 22.001,33.500 C22.001,33.500 22.001,0.000 22.001,0.000 Z" id="path-1" class="cls-4" fill-rule="evenodd"/>
+  </g>
+</svg>

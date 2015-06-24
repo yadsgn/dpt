@@ -1,0 +1,14 @@
+files:
+    - .core/libs/jblock.js
+    - .core/libs/jquery.2.1.1.min.js
+    - .core/libs/jquery.cookie.js
+    - .core/libs/jquery.replacetext.js
+    - .core/libs/jquery.mousestop.js
+    - .core/libs/jquery.mobile.custom.min.js
+    - .core/libs/jquery.easing.1.3.js
+    - .core/libs/underscore-min.js
+    - .core/libs/i-bem.js
+    - .core/libs/dataTemplates.jblock.js
+    - .core/libs/jquery-ui.min.js
+    - .core/libs/jquery.swipe.js
+    - .core/libs/text.js

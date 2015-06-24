@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<locale lang="tr">
+    <services>
+        <item id="serp">Arama</item>
+        <item id="images">Görsel</item>
+        <item id="maps">Haritalar</item>
+        <item id="market">Market</item>
+        <item id="news">Haberler</item>
+        <item id="dict">Çeviri</item>
+        <item id="video">Video</item>
+        <item id="weather">Hava durumu</item>
+        <item id="auto"></item>
+        <item id="music"></item>
+        <item id="afisha"></item>
+        <item id="timetable"></item>
+        <item id="taxi"></item>
+        <item id="tv"></item>
+        <item id="mail">Mail</item>
+        <item id="disk">Disk</item>
+        <item id="sport"></item>
+        <item id="app">Tüm servisler</item>
+    </services>
+
+    <strings>
+        <item id="search">Bul</item>
+        <item id="remove">Remove</item>
+        <item id="thsnd">bin</item>
+        <item id="mln">milyon</item>
+        <item id="Video">Video</item>
+    </strings>
+</locale>

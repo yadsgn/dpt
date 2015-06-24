@@ -1,0 +1,276 @@
+@import (reference) 'const-controls-0.0.1a.less';
+
+.input {
+    position:relative;
+    display:inline-block;
+    vertical-align:baseline;
+    width:100%;
+    /*.shadow(transparent,2px);
+    .transition(box-shadow, @time-fast);*/
+
+    /*
+     * mod
+     */
+    &_size {
+        .size (@height, @line-height, @font-size) {
+            @vert: (@height - @line-height) / 2;
+            .input__input {
+                .font(@font-size, @line-height);
+                padding:@vert round(@height * 0.8) @vert round(@height * 0.3);
+                height:@height;
+            }
+            &.input_readonly_yes .input__input {
+                padding-right:round(@height * 0.3);
+            }
+            .input__clear {
+                background-image:data-uri('i/clear-10.svg');
+                width:@height;
+            }
+            .input__icon {
+                height: @height;
+                width: @height;
+            }
+            .input__icon_side_left ~ .input__input {
+                padding-left: @height; 
+            }
+            .input__icon_side_right ~ .input__input {
+                padding-right: @height * 1.5; 
+            }
+            .input__icon_side_right ~ .input__clear {
+                right: @height * 0.5;
+            }
+            &.input_align_right {
+                .input__input {
+                    text-align:right;
+                }
+                .input__clear {
+                    right:auto;
+                    left:0;
+                }
+                &.input_size {
+                    .input__input {
+                        padding-left:round(@height * 0.8);
+                        padding-right:round(@height * 0.3);
+                    }
+                }
+
+            }
+        }
+        &_S {
+            & {.size(@height-button-s, @height-p-s, @font-size-p)}
+            .input__clear {background-image:data-uri('i/clear-10.svg')}
+        }
+        &_M {
+            & {.size(@height-button-m, @height-p-s, @font-size-p)}
+            .input__clear {background-image:data-uri('i/clear-10.svg')}
+        }
+        &_L {
+            & {.size(@height-button-l, @height-p-l, @font-size-p2)}
+            .input__clear {background-image:data-uri('i/clear-14.svg')}
+        }
+        &_XL {
+            & {.size(@height-button-xl, @height-p-xl, @font-size-p2)}
+            .input__clear {background-image:data-uri('i/clear-14.svg')}
+        }
+        &_XXL {
+            & {.size(@height-button-xxl, @height-p-xxl, @font-size-p2)}
+            .input__clear {background-image:data-uri('i/clear-14.svg')}
+        }
+        &_head {
+            & {.size(34px, @height-p-l, @font-size-p)}
+            .input__clear {background-image:data-uri('i/clear-14.svg')}
+        }
+    }
+    &_type {
+        &_normal {
+            .shadow-inset(@color-border-control);
+            .desktop &:not(.input_focus_yes):hover,
+            &.input_hover {
+                .shadow-inset(fade(@color-border-control, 30%));
+            }
+            .input__ground {
+                background:#FFF;
+            }
+        }
+        &_shadow {
+            background:#FFF;
+            .shadow-control;
+            &.input_focus_yes,
+            &.input_focus {
+                .focus-border;
+                .shadow-control;
+            }
+        }
+        &_clear {
+
+        }
+        &_button {
+            .shadow-inset(@color-border-control);
+            border-radius:@button-radius;
+            .desktop &:not(.input_focus_yes):hover,
+            &.input_hover {
+                .shadow-inset(fade(@color-border-control, 30%));
+            }
+            .input__ground {
+                border-radius:@button-radius - 1;
+                background:#FFF;
+            }
+        }
+        &_button-shadow {
+            border-radius:@button-radius;
+            background:#FFF;
+            .shadow-control;
+            &.input_focus_yes,
+            &.input_focus {
+                .focus-border;
+                .shadow-control;
+            }
+        }
+    }
+    &_pin {
+        &_left {
+            &:not(.input_focus_yes) .input__ground {
+                left:0;
+            }
+        }
+        &_right {
+            &.input_type_button,
+            &.input_type_button-shadow {
+                border-radius:@button-radius 0 0 @button-radius;
+                .input__ground {
+                    border-radius:@button-radius - 1 0 0 @button-radius - 1;
+                }
+            }
+            &:not(.input_focus_yes) .input__ground {
+                right:0;
+            }
+        }
+        &_both {
+            &:not(.input_focus_yes) .input__ground {
+                right:0;
+                left:0;
+            }
+        }
+    }
+    &_focus_yes,
+    &_focus {
+        .focus-border;
+        .input__ground {
+            right:2px;
+            top:2px;
+            left:2px;
+            bottom:2px;
+        }
+    }
+    &_disable_yes {
+        box-shadow:none;
+
+        .input__ground {
+            background:rgba(0,0,0,.08);
+        }
+        .input__input {
+            color:@color-disable;
+            cursor:default;
+        }
+        .input__clear {
+            display:none;
+        }
+    }
+    &_mode {
+        &_check {
+            &.input_state_filled {
+                box-shadow:inset 0 0 0 1px rgba(153, 122, 0, .5);
+                .input__ground {
+                    background:#ffeba0;
+                }
+            }
+        }
+    }
+
+    /*
+     * elem
+     */
+     &__input {
+        position:relative;
+        z-index:2;
+        background:none;
+        border:none;
+        font-family:arial, helvetica, sans-serif;
+        display:inline-block;
+        width:100%;
+        box-sizing:border-box;
+        vertical-align:baseline;
+        -webkit-transition:
+            box-shadow .05s ease-out,
+            background .05s ease-out;
+        &:focus {
+            outline:none;
+        }
+        &::-webkit-input-placeholder {
+            color:@color-gray;
+        }
+
+    }
+    &__ground {
+        .absolute(1px,1px,1px,1px);
+        z-index:1;
+    }
+    &__clear {
+        position:absolute;
+        top:0;
+        bottom:0;
+        right:0;
+        background:center center no-repeat;
+        z-index:3;
+        opacity:.3;
+        .transition(opacity, @time-fast);
+        &:hover {
+            cursor:pointer;
+            opacity:1 !important;
+        }
+        .input_state_empty & {
+            opacity:0 !important;
+            cursor:text;
+        }
+        .input_readonly_yes & {
+            display:none;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        pointer-events: none;
+
+        z-index: 2;
+
+        display: inline-block;
+        background-repeat: no-repeat;
+        background-position: 50%;
+
+        &_side_left {
+            left: 0;
+        }
+
+        &_side_right {
+            right: 0;
+        }
+
+        &_type_eye {
+            background-image:data-uri('i/eye.svg');
+        }
+
+        &_type_location {
+            background-image:data-uri('i/location.svg');
+            opacity: .4;
+            .transition(opacity, @time-fast);
+            &:hover {
+                cursor:pointer;
+                opacity:1 !important;
+            }
+        }
+
+        &_type_lock {
+            background-image:data-uri('i/lock.svg');
+        }
+    }
+}

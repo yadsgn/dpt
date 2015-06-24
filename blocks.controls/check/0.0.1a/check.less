@@ -1,0 +1,167 @@
+@import (reference) 'const-controls-0.0.1a.less';
+
+.check {
+    display:inline-block;
+    vertical-align:baseline;
+    -webkit-user-select:none;
+    user-select:none;
+    cursor:pointer;
+}
+.check .button {
+    padding:0;
+    overflow:visible;
+}
+.check .button_mode_radio,
+.check .button_mode_radio .button__ground,
+.check .button_mode_radio .button__border {
+    border-radius:100%;
+}
+
+.check .button__tip {
+    display:block;
+    position:absolute;
+    z-index:4;
+    background:left top no-repeat;
+    opacity:0;
+    -webkit-transition:
+        bottom .05s ease-out,
+        opacity .05s ease-out;
+}
+.check .button_mode_radio .button__tip {
+    background:center center no-repeat;
+}
+
+.check__label {
+    display:inline-block;
+    vertical-align:baseline;
+}
+
+/*
+ * _size
+ */
+/* _size_M */
+.check_size_M {
+    line-height:24px;
+    font-size:13px;
+}
+.check_size_M .button {
+    line-height:20px;
+    width:14px;
+    height:14px;
+    top:2px;
+}
+.check_size_M .check__label {
+    padding-left:5px;
+}
+.check_size_M .button__tip {
+    bottom:8px;
+    left:2px;
+    width:16px;
+    height:16px;
+    background-image:data-uri('i/tip-m.svg');
+    opacity:0;
+}
+.check_size_M .button_mode_radio .button__tip {
+    background-image:data-uri('i/radio-m.svg');
+    bottom:0;
+    left:0;
+    width:14px;
+    height:14px;
+}
+.check_size_M .button_mode_check.button_state_check .button__tip {
+    bottom:3px;
+    opacity:1;
+}
+.check_size_M .button_mode_radio.button_state_check .button__tip {
+    opacity:1;
+}
+
+/* _size_L */
+.check_size_L {
+    line-height:30px;
+    font-size:15px;
+}
+.check_size_L .button {
+    line-height:24px;
+    width:17px;
+    height:17px;
+    top:3px;
+}
+.check_size_L .check__label {
+    padding-left:7px;
+}
+.check_size_L .button__tip {
+    bottom:10px;
+    left:3px;
+    width:18px;
+    height:18px;
+    background-image:data-uri('i/tip-l.svg');
+    opacity:0;
+}
+.check_size_L .button_mode_radio .button__tip {
+    background-image:data-uri('i/radio-l.svg');
+    width:17px;
+    height:17px;
+    bottom:0;
+    left:0;
+}
+.check_size_L .button_mode_check.button_state_check .button__tip {
+    bottom:3px;
+    opacity:1;
+}
+.check_size_L .button_mode_radio.button_state_check .button__tip {
+    opacity:1;
+}
+
+/* _size_XL */
+.check_size_XL {
+    line-height:36px;
+    font-size:18px;
+}
+.check_size_XL .button {
+    line-height:28px;
+    width:19px;
+    height:19px;
+    top:3px;
+}
+.check_size_XL .check__label {
+    padding-left:9px;
+}
+.check_size_XL .button__tip {
+    bottom:10px;
+    left:3px;
+    width:20px;
+    height:21px;
+    background-image:data-uri('i/tip-xl.svg');
+    opacity:0;
+}
+.check_size_XL .button_mode_radio .button__tip {
+    background-image:data-uri('i/radio-xl.svg');
+    width:19px;
+    height:19px;
+    bottom:0;
+    left:0;
+}
+.check_size_XL .button_mode_check.button_state_check .button__tip {
+    bottom:3px;
+    opacity:1;
+}
+.check_size_XL .button_mode_radio.button_state_check .button__tip {
+    opacity:1;
+}
+
+/*
+ * _disable
+ */
+.check_disable_yes,
+.check_disable {
+    cursor:default;
+}
+.check_disable_yes .check__label,
+.check_disable .check__label {
+    opacity: .5;
+}
+.check_disable_yes .button_state_check .button__tip,
+.check_disable .button_state_check .button__tip {
+    opacity:.4 !important;
+}

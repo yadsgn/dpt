@@ -1,0 +1,104 @@
+@import  'const-controls-0.0.1a.less';
+
+.textarea {
+    position:relative;
+    display:inline-block;
+    vertical-align:top;
+    width:100%;
+    padding: 0 1px 1px 0;
+
+    /*
+     * mod
+     */
+    &_size {
+        &_M {
+            .textarea__textarea {
+                .font(@font-size-p, @height-p-m);
+                padding:4px 22px 4px 6px;
+            }
+            .textarea__clear {
+                background-image:url(i/clear-10.svg);
+                width:24px;
+                height:24px;
+            }
+        }
+        &_L {
+            .textarea__textarea {
+                .font(@font-size-p2, @height-p-l);
+                padding:6px 30px 6px 8px;
+            }
+            .textarea__clear {
+                background-image:url(i/clear-14.svg);
+                width:32px;
+                height:32px;
+            }
+        }
+    }
+    &_type {
+        &_normal {
+            .transition(box-shadow, @time-fast);
+            .shadow-inset(@color-border-control);
+
+            .desktop &:not(.textarea_focus_yes):hover,
+            &.textarea_hover {
+                .shadow-inset(fade(@color-border-control, 30%));
+            }
+            .textarea__ground {
+                background:#FFF;
+            }
+        }
+    }
+    &_focus,
+    &_focus_yes {
+        .focus;
+    }
+
+    /*
+     * elem
+     */
+     &__textarea {
+        resize:vertical;
+        position:relative;
+        z-index:2;
+        background:none;
+        border:none;
+        font-family:arial, helvetica, sans-serif;
+        display:inline-block;
+        width:100%;
+        box-sizing:border-box;
+        vertical-align:top;
+        .transition(box-shadow, @time-fast);
+        .transition(background, @time-fast);
+        &:focus {
+            outline:none;
+        }
+        &::-webkit-input-placeholder {
+            color:@color-gray;
+        }
+    }
+    &__ground {
+        position:absolute;
+        left:1px;
+        right:1px;
+        top:1px;
+        bottom:1px;
+        z-index:1;
+    }
+    &__clear {
+        position:absolute;
+        top:0;
+        right:0;
+        background:center center no-repeat;
+        z-index:3;
+        opacity:.4;
+        .transition(opacity, @time-fast);
+        &:hover {
+            cursor:pointer;
+            opacity:1;
+        }
+        .textarea_state_empty & {
+            opacity:0;
+            cursor:text;
+        }
+    }
+}

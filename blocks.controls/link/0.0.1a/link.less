@@ -1,0 +1,41 @@
+@import (reference) 'const-controls-0.0.1a.less';
+
+a.link {
+    text-decoration:none;
+}
+
+.link,
+.link table {
+    color:@color-link;
+    cursor:pointer !important;
+    .transition(color, @time-normal);
+    -webkit-tap-highlight-color:@color-border !important;
+}
+.desktop .link:not(.link_nohover):hover,
+.desktop .link:hover table {
+    color:@color-link-hover;
+}
+.desktop .link_ghost:hover:not(.link_nohover),
+.desktop .link_ghost:hover table {
+    color:#000;
+}
+
+.link_outer  {color:@color-link-outer}
+.link_minor  {color:@color-link-minor}
+.link_ghost  {color:@color-gray}
+.link_black  {color: @color-black}
+.link_strong {font-weight:bold}
+
+.link_type_outer  {color:@color-link-outer}
+.link_type_minor  {color:@color-link-minor}
+.link_type_ghost  {color:@color-gray}
+.link_type_black  {color: @color-black}
+.link_type_strong {font-weight:bold}
+
+/*
+ * icon
+ */
+.link_icon {
+    padding-left:20px;
+    background:left center no-repeat;
+}

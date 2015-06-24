@@ -1,0 +1,243 @@
+@import (reference) 'const-controls-0.0.1a.less';
+
+.tumbler {
+    cursor:pointer;
+    display:inline-block;
+    vertical-align:baseline;
+}
+
+.tumbler__track {
+    display:inline-block;
+    position:relative;
+}
+
+/*
+ * button
+ */
+.tumbler .button {
+    position:absolute;
+    padding:0;
+    top:0;
+}
+
+
+/*
+ * __on, __off
+ */
+.tumbler__on,
+.tumbler__off {
+    position:absolute;
+    overflow:hidden;
+    top:0;
+    bottom:0;
+    -webkit-transition:
+        left .15s ease-out,
+        right .15s ease-out,
+        background .05s ease-out;
+}
+
+.tumbler__on {
+    border-radius:3px;
+    background:rgba(153,122,0,.5);
+}
+.desktop .tumbler__on:hover {
+    background:rgba(129,103,0,.6);
+}
+.tumbler__on:before {
+    content:'';
+    position:absolute;
+    border-radius:2px;
+    top:1px;
+    right:1px;
+    bottom:1px;
+    left:1px;
+    background:#ffeba0;
+}
+.tumbler__on:after {
+    color:#000;
+    content:'Вкл';
+    position:absolute;
+}
+
+.tumbler__off {
+    border-radius:3px;
+    background:rgba(0,0,0,.05);
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,.2);
+}
+.desktop .tumbler__off:hover {
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,.3);
+}
+.tumbler__off:before {
+
+}
+.tumbler__off:after {
+    content:'Откл';
+    position:absolute;
+}
+
+/*
+ * _state_off
+ */
+.tumbler_size_XL.tumbler_state_off .tumbler__on {
+    left:0;
+    right:96px;
+}
+.tumbler_size_L.tumbler_state_off .tumbler__on {
+    left:0;
+    right:82px;
+}
+.tumbler_size_M.tumbler_state_off .tumbler__on {
+    left:0;
+    right:76px;
+}
+.tumbler_size_S.tumbler_state_off .tumbler__on {
+    left:0;
+    right:72px;
+}
+
+.tumbler_state_off .tumbler__off {
+    left:0;
+    right:0;
+}
+
+.tumbler_state_off .button {
+    left:0;
+}
+
+/*
+ * _state_on
+ */
+.tumbler_state_on .tumbler__on {
+    left:0;
+    right:0;
+}
+
+.tumbler_size_XL.tumbler_state_on .tumbler__off {
+    left:96px;
+    right:0;
+}
+.tumbler_size_L.tumbler_state_on .tumbler__off {
+    left:82px;
+    right:0;
+}
+.tumbler_size_M.tumbler_state_on .tumbler__off {
+    left:76px;
+    right:0;
+}
+.tumbler_size_S.tumbler_state_on .tumbler__off {
+    left:72px;
+    right:0;
+}
+
+.tumbler_size_XL.tumbler_state_on .button {
+    left:58px;
+}
+.tumbler_size_L.tumbler_state_on .button {
+    left:50px;
+}
+.tumbler_size_M.tumbler_state_on .button {
+    left:48px;
+}
+.tumbler_size_S.tumbler_state_on .button {
+    left:42px;
+}
+
+/*
+ * _size_XL
+ */
+.tumbler_size_XL {
+    font-size:18px;
+    line-height:38px;
+}
+.tumbler_size_XL .tumbler__track {
+    height:38px;
+    width:96px;
+}
+.tumbler_size_XL .button {
+    width:38px;
+    height:38px;
+}
+.tumbler_size_XL .tumbler__off:after {
+    left:46px;
+}
+.tumbler_size_XL .tumbler__on:after {
+    right:50px;
+}
+
+/*
+ * _size_L
+ */
+.tumbler_size_L {
+    font-size:15px;
+    line-height:32px;
+}
+.tumbler_size_L .tumbler__track {
+    height:32px;
+    width:82px;
+}
+.tumbler_size_L .button {
+    width:32px;
+    height:32px;
+}
+.tumbler_size_L .tumbler__off:after {
+    left:38px;
+}
+.tumbler_size_L .tumbler__on:after {
+    right:42px;
+}
+
+/*
+ * _size_M
+ */
+.tumbler_size_M {
+    font-size:13px;
+    line-height:28px;
+}
+.tumbler_size_M .tumbler__track {
+    height:28px;
+    width:76px;
+}
+
+.tumbler_size_M .button {
+    width:28px;
+    height:28px;
+}
+
+.tumbler_size_M .tumbler__off:after {
+    left:36px;
+}
+
+.tumbler_size_M .tumbler__on:after {
+    right:39px;
+}
+
+
+/*
+ * _size_S
+ */
+.tumbler_size_S {
+    font-size:13px;
+    line-height:24px;
+}
+.tumbler_size_S .tumbler__track {
+    height:24px;
+    width:66px;
+}
+
+.tumbler_size_S .button {
+    width:24px;
+    height:24px;
+}
+
+.tumbler_size_S .tumbler__off:after {
+    left:29px;
+}
+
+.tumbler_size_S .tumbler__on:after {
+    right:33px;
+}
+
+/*
+ * placeholder
+ */
+.tumbler__placeholder {visibility:hidden}

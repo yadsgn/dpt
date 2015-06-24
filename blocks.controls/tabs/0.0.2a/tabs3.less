@@ -1,0 +1,86 @@
+@import (reference) 'const-controls-0.0.1a.less';
+
+.tabs
+{
+    .no-select;
+    cursor:default;
+
+    &_theme {
+        &_head {
+            .tabs__item {
+                .p;
+                .ghost;
+                .transition(color, @time-fast);
+                line-height:@height-head-menu;
+                display: inline-block;
+                margin:0 12px;
+                position: relative;
+                &:before {
+                    content:'';
+                    position: absolute;
+                    background: transparent;
+                    height:3px;
+                    left:12px;
+                    right:12px;
+                    bottom:0;
+                    .transition(background, @time-fast);
+                }
+                &:first-child {
+                    margin-left: @serp-side-gap;
+                }
+
+                &_state {
+                    &_release {
+                        cursor:pointer;
+                        &:hover {
+                            color:#000;
+                        }
+                    }
+                    &_check {
+                        color:#000;
+                        border-bottom: 3px solid @color-yellow;
+                    }
+                }
+            }
+            box-shadow: inset 0 -1px 0 0 rgba(0,0,0,.1);
+        }
+        &_head-icons {
+            .tabs__item {
+                .p;
+                .transition(color, @time-fast);
+                height:@height-head;
+                width:80px;
+                display: inline-block;
+                position: relative;
+                cursor:pointer;
+                text-align: center;
+
+                .tabs__icon {
+                    height:34px;
+                    margin-top:10px;
+                    background: center center no-repeat;
+                    position: relative;
+                    top:0;
+                    .transition(top, @time-fast);
+                }
+                &:hover {
+                    .tabs__icon {
+                        top:-3px;
+                    }
+                }
+                .tabs__title {
+                    position: relative;
+                    display: inline-block;
+                }
+
+                &_state {
+                    &_release {
+                    }
+                    &_check {
+
+                    }
+                }
+            }
+        }
+    }
+}

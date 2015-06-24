@@ -1,0 +1,55 @@
+@import (reference) 'const-0.0.1a.less';
+
+/*
+ * mix
+ */
+.focus () {
+    outline:none;
+    z-index:2;
+    .animation(focus-blink, 1.5s);
+    @-webkit-keyframes focus-blink {
+        from, to {
+            .shadow(@color:@color-action, @width:1px);
+            .shadow-inset(@color:@color-action, @width:1px);
+            /*box-shadow+: 0 0 10px 1px #FFF;*/
+        }
+        40%, 60%  {
+            .shadow(@color:lighten(@color-action, 20%), @width:1px);
+            .shadow-inset(@color:lighten(@color-action, 20%), @width:1px);
+            /*box-shadow+: 0 0 10px 1px #FFF;*/
+        }
+    }
+}
+
+.focus-border () {
+    outline:none;
+    z-index:2;
+    .shadow-inset(@color:lighten(@color-action, 15%), @width:2px);
+}
+
+.focus-ground () {
+    outline:none;
+    .animation(focus-ground, 1s);
+    @-webkit-keyframes focus-ground {
+        from, to {
+            background:@color-action;
+        }
+        40%, 60%  {
+            background:lighten(@color-action, 20%);
+        }
+    }
+}
+
+@-webkit-keyframes focus-ground-check {
+    from, to {
+        background:@color-selection;
+    }
+    40%, 60%  {
+        background:lighten(@color-selection, 10%);
+    }
+}
+
+.focus-ground-check () {
+    outline:none;
+    .animation(focus-ground-check, 1s);
+}

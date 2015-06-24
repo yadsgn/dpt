@@ -1,0 +1,757 @@
+@import (reference) 'const-controls-0.0.1a.less';
+
+/* Убрать, когда разрешится https://github.yandex-team.ru/adrior/new-home/issues/30 */
+@-webkit-keyframes xfocus-ground {
+    from, to {
+        background:@color-action;
+    }
+    40%, 60%  {
+        background:lighten(@color-action, 20%);
+    }
+}
+@-webkit-keyframes xfocus-ground-check {
+    from, to {
+        background:@color-selection;
+    }
+    40%, 60%  {
+        background:lighten(@color-selection, 10%);
+    }
+}
+/* ------ */
+
+.button {
+    display:inline-block;
+    position:relative;
+    border:none;
+    background:none;
+    cursor:pointer;
+    overflow:hidden;
+    text-align:left;
+    vertical-align:baseline;
+    box-sizing:border-box;
+    color: @color-black;
+    .no-select;
+    border-radius:@button-radius;
+
+    .transition(background, @time-fast);
+    .transition(left, @time-normal);
+
+    &:focus {
+       outline:none;
+    }
+
+    /*
+     * mod
+     */
+    &_size {
+        .size (@height, @font-size) {
+            .font(@font-size, @height);
+
+            .button__label {
+                padding:0 @height / 2 - 1;
+            }
+            &.button_shape_circle,
+            &.button_icon-only_yes {
+                width:@height;
+                height:@height;
+            }
+            &:not(.button_icon-only_yes) .button__icon {
+                width:round(@height * 1.2);
+            }
+            .button__icon + .button__label {
+                padding-left:@height;
+            }
+            &.button_type_embed {
+                line-height:@height + 4;
+
+                &.button_shape_circle,
+                &.button_icon-only_yes {
+                    width:@height + 4;
+                    height:@height + 4;
+                }
+            }
+            &.button_mode {
+                &_dropdown,
+                &_next,
+                &_back {
+                    .button__arrow {
+                        height:@height;
+                        width:round(@height * 1.1);
+                        background-image:data-uri('i/down-l.svg');
+                    }
+                }
+                &_next,
+                &_back {
+                    .button__arrow {
+                        height:auto;
+                        bottom:0;
+                        background-image:data-uri('i/right-m.svg');
+                    }
+                }
+                &_dropdown,
+                &_next {
+                    .button__label {
+                        padding-right:round(@height * 0.9);
+                    }
+                }
+                &_back {
+                    .button__label {
+                        padding-left:round(@height * 0.9);
+                    }
+                }
+                &_dropdown,
+                &_dropup,
+                &_next {
+                    .button__label_empty_yes {
+                        padding-right:round(@height * 0.7);
+                    }
+                }
+                &_close {
+                    .button__close {
+                        height:@height;
+                        width:@height;
+                        background-image:data-uri('i/close-10.svg');
+                    }
+                    .button__label {
+                        padding-right:round(@height * 0.9);
+                    }
+                }
+            }
+        }
+
+        &_XS {
+            & {.size(@height-button-xs, @font-size-p)}
+            &.button_mode {
+                &_dropdown .button__arrow {background-image:data-uri('i/down-m.svg')}
+                &_next .button__arrow,
+                &_back .button__arrow     {background-image:data-uri('i/right-m.svg')}
+                &_close .button__close    {background-image:data-uri('i/close-10.svg')}
+            }
+        }
+        &_S {
+            & {.size(@height-button-s, @font-size-p)}
+            .button__label {
+                padding:0 @height-button-s / 2 - 2;
+            }
+            &.button_mode {
+                &_dropdown .button__arrow {background-image:data-uri('i/down-m.svg')}
+                &_next .button__arrow,
+                &_back .button__arrow     {background-image:data-uri('i/right-m.svg')}
+                &_close .button__close    {background-image:data-uri('i/close-10.svg')}
+            }
+        }
+        &_M {
+            & {.size(@height-button-m, @font-size-p)}
+            &.button_mode {
+                &_dropdown .button__arrow {background-image:data-uri('i/down-l.svg')}
+                &_next .button__arrow,
+                &_back .button__arrow     {background-image:data-uri('i/right-m.svg')}
+                &_close .button__close    {background-image:data-uri('i/close-10.svg')}
+            }
+        }
+        &_L {
+            & {.size(@height-button-l, @font-size-p2)}
+            &.button_mode {
+                &_dropdown .button__arrow {background-image:data-uri('i/down-l.svg')}
+                &_next .button__arrow,
+                &_back .button__arrow     {background-image:data-uri('i/right-m.svg')}
+                &_close .button__close    {background-image:data-uri('i/close-10.svg')}
+            }
+        }
+        &_XL {
+            & {.size(@height-button-xl, @font-size-p2)}
+            &.button_mode {
+                &_dropdown .button__arrow {background-image:data-uri('i/down-l.svg')}
+                &_next .button__arrow,
+                &_back .button__arrow     {background-image:data-uri('i/right-m.svg')}
+                &_close .button__close    {background-image:data-uri('i/close-10.svg')}
+            }
+        }
+        &_XXL {
+            & {.size(@height-button-xxl, @font-size-p2)}
+            &.button_mode {
+                &_dropdown .button__arrow {background-image:data-uri('i/down-l.svg')}
+                &_next .button__arrow,
+                &_back .button__arrow     {background-image:data-uri('i/right-m.svg')}
+                &_close .button__close    {background-image:data-uri('i/close-10.svg')}
+            }
+        }
+        &_head {
+            & {.size(34px, @font-size-p)}
+            &.button_mode {
+                &_dropdown .button__arrow {background-image:data-uri('i/down-l.svg')}
+                &_next .button__arrow,
+                &_back .button__arrow     {background-image:data-uri('i/right-m.svg')}
+                &_close .button__close    {background-image:data-uri('i/close-10.svg')}
+            }
+        }
+    }
+    &_type {
+        &_normal {
+            background:@color-border-control;
+
+            .button__ground {
+                background:#FFF;
+            }
+            .desktop &:hover,
+            &.button_hover {
+                background:fade(@color-border-control, 30%);
+            }
+            .desktop.onkey &:not(.button_state_check):focus,
+            &.button_focus:not(.button_state_check) {
+                .focus-border;
+                .button__ground {
+                    border-radius:@button-radius - 2;
+                    top:2px !important;
+                    bottom:2px !important;
+                    left:2px !important;
+                    right:2px !important;
+                }
+            }
+            &.button_state {
+                &_press {
+                    .button__ground {
+                        background:@color-neowhite;
+                    }
+                }
+                &_presscheck {
+                    background:rgba(129,103,0,.6);
+                    .button__ground {
+                        background:#fee481;
+                    }
+                }
+                &_check {
+                    background:rgba(153,122,0,.5);
+                    .desktop &:not(.button_disable_yes):hover,
+                    &.button_hover {
+                        background:rgba(129,103,0,.6);
+                    }
+                    .button__ground {
+                        background:@color-selection;
+                    }
+                    .desktop.onkey &:focus,
+                    &.button_focus {
+                        .button__ground {
+                            .focus-ground-check;
+                        }
+                    }
+                }
+            }
+
+            &.button_pin {
+                &_left {
+                    border-radius:0 @button-radius @button-radius 0;
+                    .button__ground {
+                        border-radius:0 @button-radius - 1 @button-radius - 1 0;
+                        left:-1px;
+                    }
+                    .desktop.onkey &:focus .button__ground {
+                        border-radius:0 @button-radius - 2 @button-radius - 2 0;
+                        left:1px;
+                    }
+                    &-border {
+                        border-radius:0 @button-radius @button-radius 0;
+                        .button__ground {
+                            border-radius:0 @button-radius - 1 @button-radius - 1 0;
+                        }
+                    }
+                }
+                &_right {
+                    border-radius:@button-radius 0 0 @button-radius;
+                    .desktop.onkey &:focus .button__ground {
+                        right:1px;
+                        border-radius:@button-radius - 2 0 0 @button-radius - 2;
+                    }
+                    .button__ground {
+                        border-radius:@button-radius - 1 0 0 @button-radius - 1;
+                        right:-1px;
+                    }
+                    &-border {
+                        border-radius:@button-radius 0 0 @button-radius;
+                        .button__ground {
+                            border-radius:@button-radius - 1 0 0 @button-radius - 1;
+                        }
+                    }
+                }
+                &_both {
+                    border-radius:0;
+                    .button__ground {
+                        border-radius:0;
+                        left:-1px;
+                        right:-1px;
+                    }
+                    &-border {
+                        border-radius:0;
+                        .button__ground {
+                            border-radius:0;
+                            left:1px;
+                            right:1px;
+                        }
+                    }
+                }
+                &_top {
+                    border-radius:0 0 @button-radius @button-radius;
+                    .button__ground {
+                        border-radius:0 0 @button-radius - 1 @button-radius - 1;
+                        top:-1px;
+                    }
+                }
+                &_bottom {
+                    border-radius:@button-radius @button-radius 0 0;
+                    .button__ground {
+                        border-radius:@button-radius - 1 @button-radius - 1 0 0;
+                        bottom:-1px;
+                    }
+                }
+                &_right + &_left .button__ground {
+                    left:1px;
+                }
+                /* Lego notation */
+                &_round-clear {
+                    border-radius:@button-radius 0 0 @button-radius;
+                    .desktop.onkey &:focus .button__ground {
+                        right:1px;
+                        border-radius:@button-radius - 2 0 0 @button-radius - 2;
+                    }
+                    .button__ground {
+                        border-radius:@button-radius - 1 0 0 @button-radius - 1;
+                        right:-1px;
+                    }
+                }
+                &_clear-round {
+                    border-radius:0 @button-radius @button-radius 0;
+                    .button__ground {
+                        border-radius:0 @button-radius - 1 @button-radius - 1 0;
+                        left:-1px;
+                    }
+                    .desktop.onkey &:focus .button__ground {
+                        border-radius:0 @button-radius - 2 @button-radius - 2 0;
+                        left:1px;
+                    }
+                }
+                &_round-brick {
+                    border-radius:@button-radius 0 0 @button-radius;
+                    .button__ground {
+                        border-radius:@button-radius - 1 0 0 @button-radius - 1;
+                    }
+                }
+                &_brick-round {
+                    border-radius:0 @button-radius @button-radius 0;
+                    .button__ground {
+                        border-radius:0 @button-radius - 1 @button-radius - 1 0;
+                    }
+                }
+                &_brick-clear {
+                }
+                &_clear-brick {
+                }
+                &_brick-brick {
+                        border-radius:0;
+                        .button__ground {
+                            border-radius:0;
+                            left:1px;
+                            right:1px;
+                        }
+                }
+                &_clear-clear {
+                    border-radius:0;
+                    .button__ground {
+                        border-radius:0;
+                        left:-1px;
+                        right:-1px;
+                    }
+                }
+            }
+        }
+        &_pseudo {
+            .button__border {
+                .shadow-inset(@color-border-control);
+            }
+            .desktop &:hover .button__border,
+            &.button_hover {
+                .shadow-inset(fade(@color-border-control, 30%));
+            }
+            .desktop.onkey &:focus:not(.button_state_check),
+            &.button_focus:not(.button_state_check) {
+                .button__border {
+                    .focus-border;
+                }
+            }
+            &.button_state {
+                &_press {
+                    .button__ground {
+                        background:rgba(0,0,0,.05);
+                    }
+                }
+                &_presscheck {
+                    background:rgba(129,103,0,.6);
+                    .button__ground {
+                        background:#fee481;
+                    }
+                }
+                &_check {
+                    .button__ground {
+                        background:#ffeba0;
+                    }
+                    .button__border {
+                        box-shadow:inset 0 0 0 1px rgba(153, 122, 0, .5);
+                    }
+                    .desktop &:hover .button__border {
+                        box-shadow:inset 0 0 0 1px rgba(129, 103, 0, .6);
+                    }
+                    .desktop.onkey &:focus,
+                    &.button_focus {
+                        .button__ground {
+                            .focus-ground-check;
+                        }
+                    }
+                }
+            }
+            &_pin {
+                &_clear-round {
+                    .button__border,
+                    .button__ground {
+                        border-radius:0 @button-radius @button-radius 0;
+                        left:-1px;
+                    }
+                }
+                &_round-clear {
+                    .button__border,
+                    .button__ground {
+                        border-radius:@button-radius 0 0 @button-radius;
+                        right:-1px;
+                    }
+                }
+                &_clear-clear {
+                    .button__border,
+                    .button__ground {
+                        border-radius:0;
+                        left:-1px;
+                        right:-1px;
+                    }
+                }
+                &_left {
+                    .button__border,
+                    .button__ground {
+                        border-radius:0 @button-radius @button-radius 0;
+                        left:-1px;
+                    }
+                }
+                &_right {
+                    .button__border,
+                    .button__ground {
+                        border-radius:@button-radius 0 0 @button-radius;
+                        right:-1px;
+                    }
+                }
+                &_both {
+                    .button__border,
+                    .button__ground {
+                        border-radius:0;
+                        left:-1px;
+                        right:-1px;
+                    }
+                }
+            }
+        }
+        .action () {
+            background: lighten(@color-action, 15%);
+            .desktop &:hover,
+            &.button_hover {
+                background: lighten(@color-action, 10%);
+            }
+            .desktop.onkey &:focus,
+            &.button_focus {
+                .focus-ground;
+            }
+            &.button_state {
+                &_press {
+                    background: @color-action !important;
+                }
+            }
+            &.button_pin {
+                &_left {
+                    border-radius:0 @button-radius @button-radius 0;
+                    .button__ground {
+                        border-radius:0 @button-radius - 1 @button-radius - 1 0;
+                    }
+                }
+                &_clear-round {
+                    border-radius:0 @button-radius @button-radius 0;
+                    .button__ground {
+                        border-radius:0 @button-radius - 1 @button-radius - 1 0;
+                    }
+                }
+            }
+        }
+        &_action {
+            .action;
+        }
+        &_action-shadow {
+            .action;
+            .shadow-control;
+        }
+        &_clear {
+            /*border-radius:0;*/
+            .button__icon {
+                opacity:.25;
+                .transition(opacity, @time-fast);
+            }
+            .button__border {
+                box-shadow:inset 0 0 0 1px transparent;
+            }
+            .desktop &:hover .button__icon,
+            &.button_hover .button__icon {
+                opacity:1;
+            }
+            .desktop.onkey &:focus,
+            &.button_focus {
+                .focus-border;
+            }
+            &.button_state {
+                &_press {
+                    background:rgba(0,0,0,.05);
+                }
+                &_check {
+                    .button__icon {
+                        opacity:1;
+                    }
+                }
+            }
+        }
+        &_embed {
+            border-radius:0;
+
+            .button__ground {
+                left:0; right:0; top:0; bottom:0;
+                border-radius:0;
+            }
+            .button__border {
+                border-radius:0;
+                .shadow-inset(transparent);
+            }
+            .button__icon {
+                opacity:.25;
+                .transition(opacity, @time-fast);
+            }
+            .desktop &:hover .button__icon {
+                opacity:1;
+            }
+            .desktop.onkey &:focus {
+                .focus-border;
+            }
+            &.button_state {
+                &_press {
+                    .button__ground {
+                        background:rgba(0,0,0,.05);
+                    }
+                }
+                &_check {
+                    .button__ground {
+                        background:#ffeba0;
+                        left:0;
+                        right:0;
+                        top:0;
+                        bottom:0;
+                    }
+                    .button__icon {
+                        opacity:1;
+                    }
+                    .desktop.onkey &:focus .button__border {
+                        .focus;
+                    }
+                }
+            }
+        }
+        &_shadow {
+            background:#FFF;
+            .shadow-control;
+
+            .desktop.onkey &:not(.button_state_check):focus,
+            &:not(.button_state_check).button_focus {
+                .focus-border;
+                .shadow-control;
+            }
+            &.button_state {
+                &_press {
+                    background:@color-neowhite;
+                }
+                &_presscheck {
+                    background:#fee481;
+                }
+                &_check {
+                    background:@color-selection;
+                    .desktop.onkey &:focus,
+                    &.button_focus {
+                        .focus-ground-check;
+                    }
+                }
+            }
+            &.button_pin {
+                &_left {
+                    border-radius:0 @button-radius @button-radius 0;
+                }
+                &_right {
+                    border-radius:@button-radius 0 0 @button-radius;
+                }
+                &_both {
+                    border-radius:0;
+                }
+                &_top {
+                    border-radius:0 0 @button-radius @button-radius;
+                }
+                &_bottom {
+                    border-radius:@button-radius @button-radius 0 0;
+                }
+            }
+        }
+    }
+
+    &_align {
+        &_center {
+            .button__label {
+                text-align:center;
+                width:100%;
+            }
+        }
+    }
+    &_max-width_yes,
+    &_max-width {
+        &,
+        .button__label {
+            width:100%;
+            text-align:center;
+            padding:0 !important;
+        }
+    }
+    &_shape_circle {
+        &,
+        .button__label,
+        .button__ground,
+        .button__border {
+            border-radius:100%;
+            padding:0;
+        }
+    }
+    &_mode {
+        &_dropdown {
+            .button__arrow_state_close {
+                .transform(rotate(0deg));
+            }
+            .button__arrow_state_open  {
+                .transform(rotate(-180deg));
+            }
+        }
+        &_next {
+
+        }
+        &_back {
+            .button__arrow {
+                .transform(rotate(180deg));
+                right:auto;
+                left:0;
+            }
+        }
+    }
+    &_disable_yes,
+    &_disable {
+        background:rgba(0,0,0,.08) !important;
+        cursor:default !important;
+        border-radius:@button-radius;
+        &.button_state_check {
+            background:rgba(0,0,0,.15) !important;
+        }
+        .button__border {
+            box-shadow:none !important;
+            color:@color-disable !important;
+        }
+        .button__ground {
+            background:none !important;
+        }
+        .button__label {
+            opacity: .5;
+        }
+    }
+    &_load_yes,
+    &_load {
+        background:rgba(0,0,0,.08) !important;
+        cursor:default !important;
+        border-radius:@button-radius;
+        .animation (btnload, 1s);
+
+        @-webkit-keyframes btnload {
+            from, to {background:rgba(0,0,0,.05)}
+            40%, 60% {background:#ffeba0}
+        }
+        @-webkit-keyframes btntextload {
+            from, to {color:rgba(0,0,0,.4)}
+            40%, 60% {color:#000}
+        }
+
+        .button__border {
+            box-shadow:none !important;
+        }
+        .button__ground {
+            background:none !important;
+        }
+        .button__label {
+            .animation (btntextload, 1s);
+        }
+    }
+
+    /*
+     * elem
+     */
+    &__tip {
+        display:none;
+    }
+    &__label {
+        position:relative;
+        z-index:2;
+        box-sizing:border-box;
+        white-space:nowrap;
+        text-overflow:ellipsis;
+        overflow:hidden;
+        max-width:100%;
+        display:block;
+        .button_shape_circle &:after,
+        .button_icon-only_yes &:after {
+            content:'.';
+            visibility:hidden;
+        }
+    }
+    &__ground {
+        .absolute(1px,1px,1px,1px);
+        z-index:1;
+        border-radius:@button-radius - 1;
+        background:transparent;
+        .desktop & {
+            .transition(box-shadow, @time-fast);
+            .transition(background, @time-fast);
+        }
+    }
+    &__border {
+        .absolute();
+        z-index:3;
+        border-radius:@button-radius;
+        .transition(box-shadow, @time-fast);
+        .transition(background, @time-fast);
+    }
+    &__icon {
+        .absolute(@right:auto);
+        z-index:2;
+        background:center center no-repeat;
+        .button_icon-only_yes & {
+            right:0;
+        }
+    }
+    &__arrow,
+    &__close {
+        position:absolute;
+        background:center center no-repeat;
+        z-index:3;
+        right:0;
+        top:0;
+        .transition(-webkit-transform, @time-fast);
+    }
+}

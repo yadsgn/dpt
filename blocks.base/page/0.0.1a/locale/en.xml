@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<locale lang="tr">
+    <strings>
+        <item id="search">Search</item>
+        <item id="remove">Remove</item>
+    </strings>
+</locale>

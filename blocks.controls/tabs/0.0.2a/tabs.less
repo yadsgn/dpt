@@ -1,0 +1,51 @@
+@import (reference) 'const-controls-0.0.1a.less';
+
+.tabs {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	margin-bottom: -3px;
+	overflow-x: scroll;
+
+    &__item {
+		padding: 0 13px;
+		-webkit-flex-shrink: 0;
+		-ms-flex-negative: 0;
+		flex-shrink: 0;
+		-webkit-box-flex: 0;
+		-webkit-flex-grow: 0;
+		-ms-flex-positive: 0;
+		flex-grow: 0;
+		cursor: pointer;
+		list-style: none;
+		line-height: 46px;
+		color: #999999;
+		-webkit-transition: color 0.15s ease-out 0s;
+		-moz-transition: color 0.15s ease-out 0s;
+		transition: color 0.15s ease-out 0s;
+
+		&:first-child {
+            padding-left: 0;
+        }
+
+        &:last-child {
+			padding-right: 0;
+        }
+
+    	&_state {
+	        &_release {
+	            cursor:pointer;
+	            &:hover {
+	                color:#000;
+	            }
+	        }
+		&_check {
+				color: #000000;
+				cursor: default !important;
+				border-bottom: 3px solid @color-yellow;
+			}
+		}
+    }
+}

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="30" height="42" viewBox="0 0 30 42">
+  <defs>
+    <style>
+
+      .cls-3 {
+        fill: #ffcc00;
+      }
+
+      .cls-4 {
+        fill: #000000;
+        opacity: 0.12;
+      }
+    </style>
+  </defs>
+  <g id="navisvg">
+    <path d="M30.000,0.000 C30.000,0.000 30.000,42.000 30.000,42.000 C30.000,42.000 18.000,31.000 18.000,31.000 C18.000,31.000 -0.000,31.000 -0.000,31.000 C-0.000,31.000 30.000,0.000 30.000,0.000 Z" id="path-1" class="cls-3" fill-rule="evenodd"/>
+    <path d="M20.500,24.500 C20.500,24.500 30.000,42.000 30.000,42.000 C30.000,42.000 18.000,31.000 18.000,31.000 C18.000,31.000 -0.000,31.000 -0.000,31.000 C-0.000,31.000 20.500,24.500 20.500,24.500 Z" id="path-2" class="cls-4" fill-rule="evenodd"/>
+  </g>
+</svg>

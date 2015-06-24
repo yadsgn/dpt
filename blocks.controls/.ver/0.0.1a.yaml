@@ -1,0 +1,16 @@
+blocks:
+    button:     0.0.1a
+    check:      0.0.1a
+    input:      0.0.1a
+    link:       0.0.1a
+    search:     0.0.1a
+    select:     0.0.1a
+    slider:     0.0.1a
+    spinner:    0.0.1a
+    suggest:    0.0.1a
+    tumbler:    0.0.1a
+    radio:      0.0.1a
+    radiogroup: 0.0.1a
+    popup:      0.0.1a
+    menu:       0.0.1a
+    tabs:       0.0.1a
