@@ -1,0 +1,124 @@
+@import '../default/const-0.0.1a.less';
+
+/*
+ * Color vars
+ */
+
+@color-border-control:  rgba(0,0,0,.12);
+
+/*
+ * Typo
+ */
+
+@serp-typo-size-supertitle: 26px;
+@serp-typo-size-supertitle-col6: 26px;
+@serp-typo-size-title:      20px;
+@serp-typo-size-subtitle:   15px;
+@serp-typo-size-text:       15px;
+@serp-typo-size-supertext:  15px;
+@serp-typo-size-sign:       15px;
+@serp-typo-size-hint:       12px;
+@serp-typo-size-list:       15px;
+@serp-typo-size-set:        15px;
+
+@serp-typo-height-supertitle:   30px;
+@serp-typo-height-title:        24px;
+@serp-typo-height-subtitle:     20px;
+@serp-typo-height-text:         19px;
+@serp-typo-height-supertext:    24px;
+@serp-typo-height-sign:         16px;
+@serp-typo-height-hint:         16px;
+@serp-typo-height-list:         19px;
+
+@serp-typo-gap-x:           12px;
+
+/*
+ * SERP grid vars
+ */
+
+@height-head: 144px;
+@height-head-menu:50px;
+
+@serp-side-gap-min: 18px;
+@serp-side-gap: 19px;
+@serp-vert-gap: 25px;
+
+@serp-col: 30px;
+@serp-gap: 12px;
+
+@serp-width: @serp-col-num * @serp-col + (@serp-col-num - 1) * @serp-gap;
+
+/*
+ * gap vars
+ */
+
+@gap-xs: 4px;
+@gap-s: 6px;
+@gap-m: 10px;
+@gap-l: 20px;
+
+/*
+ *  Fonts faces
+ */
+
+@font-sans: "Helvetica Neue";
+
+/*
+ * Font-size vars
+ */
+
+@font-size-minor: 12px;
+@font-size-p:     15px;
+@font-size-p2:    15px;
+@font-size-h3:    20px;
+@font-size-h2:    24px;
+@font-size-h1:    28px;
+
+@height-button-xs: 22px;
+@height-button-s:  28px;
+@height-button-m:  36px;
+@height-button-l:  44px;
+@height-button-xl: 60px;
+
+/*
+ * Mixes
+ */
+
+.serp-width(@screen-width) {
+	@serp-col-num: floor((@screen-width + @serp-gap - @serp-side-gap-min*2 )/(@serp-col + @serp-gap));
+    @serp-width: @serp-col-num * @serp-col + (@serp-col-num - 1) * @serp-gap;
+}
+
+.serp-media-width(@screen-width) {
+	.serp-width(@screen-width);
+	@media (max-width: @screen-width) {
+        .serp {width:  @serp-width;}
+    }
+}
+
+.edges(@serp-width) {
+	margin-left: calc(~"(100vw - "@serp-width~") / -2");
+    margin-right: calc(~"(100vw - "@serp-width~") / -2");
+    padding-left: calc(~"(100vw - "@serp-width~") / 2");
+    padding-right: calc(~"(100vw - "@serp-width~") / 2");
+}
+
+.serp-side-gap(@serp-width) {
+	@serp-side-gap: calc(~"(100vw - "@serp-width~") / 2");
+}
+
+.head-media-margins(@screen-width) {
+	.serp-width(@screen-width);
+	@media (max-width: @screen-width) {
+		.serp-side-gap(@serp-width);
+		margin-left: @serp-side-gap;
+		margin-right: @serp-side-gap;
+    }
+}
+
+.serp-media-edges(@screen-width) {
+	.serp-width(@screen-width);
+	@media (max-width: @screen-width) {
+        .edges(@serp-width);
+    }
+}

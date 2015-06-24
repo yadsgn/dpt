@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/yadsgn/dpt#readme",
   "dependencies": {
-    "express": "^4.13.0"
+    "express": "^4.13.0",
+    "yamljs": "^0.2.3"
   }
 }

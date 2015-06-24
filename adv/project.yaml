@@ -1,14 +1,4 @@
 libs:
-    autospec:
-    base:
-    formats:
-    layouts:
-    constructives:
-    controls:
-    portal:
-    ads:
-    data:
-    wiz:
-blocks:
-    constructives.snippet-meta: 1.1.0a
+    base: 0.0.1a
+    controls: 0.0.1a
 name: 'Демонстрация серпа'

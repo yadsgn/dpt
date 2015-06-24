@@ -1,0 +1,25 @@
+// @serp-col and @serp-gap stored in /const/desktop/serp-grid.less
+
+/*
+ * Grid
+ */
+@serp-col-num: 12;
+@serp-width: @serp-col-num * @serp-col + (@serp-col-num - 1) * @serp-gap;
+@serp-nav-width:130px;
+@serp-icons-gap: 0px;
+@serp-side-gap: 46px;
+
+.serp-calc-col (@num:1, @property: width, @diff: 0px) {
+    @{property}: @num * @col + (@num - 1) * @gap + @diff;
+}
+
+/*
+ * Typo
+ */
+
+/*
+ * Color
+ */
+@serp-color-link:  #04b;
+@serp-color-url:   #070;
+@serp-color-minor: #999;
